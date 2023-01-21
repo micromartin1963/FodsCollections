@@ -168,18 +168,30 @@ class CfgVehicles
 	{
 		scope = 1;
 		model = "FodsCardsCollections\data\flagbook2.p3d";
+		hiddenSelections[] = {"book"};		
 		rotationFlags = 1;
 		weight = 150;
 		itemSize[] = {4,4};
 		inventorySlot[] = {"Book_001"};
-
 	};
 
 		class Cigarette_album : MyBook_Base
 	{
 		scope = 2;
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\book.paa"};
 		title = "Cigarette Card Collection";
 		displayName = "Album For Your Collection Of Flags";
+		descriptionShort = "If you smoke alot you'll get the set";
+		allowOwnedCargoManipulation = 1;
+		attachments[] = {"card_UK","card_USA","card_FRANCE","card_SPAIN","card_SWEDEN","card_GERMAN"};
+	};
+
+		class Cigarette_album2 : MyBook_Base
+	{
+		scope = 2;
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\book4.paa"};
+		title = "Cigarette Card Collection";
+		displayName = "Album For Your Collection Of Someting else";
 		descriptionShort = "If you smoke alot you'll get the set";
 		allowOwnedCargoManipulation = 1;
 		attachments[] = {"card_UK","card_USA","card_FRANCE","card_SPAIN","card_SWEDEN","card_GERMAN"};
