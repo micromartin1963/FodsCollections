@@ -41,7 +41,7 @@ class CfgPatches
 {
 	class FodsCardsCollections
 	{
-		units[] = {"card_UK","Cigarette_album"};
+		units[] = {"card_UK","Cigarette_albumflags"};
 		weapons[] = {};
 		requiredVersion = 0.1;
 		requiredAddons[] = {"DZ_Data"};
@@ -89,6 +89,21 @@ class CfgSlots
 		ghostIcon = "default";
 	};
 
+	// --- end of flags
+
+		class Slot_card_ETYPE
+	{
+		name = "card_ETYPE";
+		displayName = "Cigarette card E-Type";
+		ghostIcon = "default";
+	};
+
+		class Slot_card_MINI
+	{
+		name = "card_MINI";
+		displayName = "Cigarette card Austin Mini";
+		ghostIcon = "default";
+	};
 
 };
 
@@ -163,6 +178,26 @@ class CfgVehicles
 		inventorySlot[] = {"card_GERMAN"};
 	};
 
+	//---- end of flags
+
+		class card_ETYPE : Cigarette_Cards
+	{
+		scope = 2;
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\EType.paa"};
+		displayName = "Cigarette Card : E-Type";
+		descriptionShort = "Cigarette Card : collect all 6";
+		inventorySlot[] = {"card_ETYPE"};
+	};
+
+		class card_MINI : Cigarette_Cards
+	{
+		scope = 2;
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\mini.paa"};
+		displayName = "Cigarette Card : Austin Mini";
+		descriptionShort = "Cigarette Card : collect all 6";
+		inventorySlot[] = {"card_MINI"};
+	};
+
 // -------- end of cards -----------------
 	class MyBook_Base : Inventory_Base
 	{
@@ -180,21 +215,32 @@ class CfgVehicles
 		scope = 2;
 		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\book.paa"};
 		title = "Cigarette Card Collection";
+		displayName = "Album For Your Collection Of Something";
+		descriptionShort = "If you smoke alot you'll get the set";
+		allowOwnedCargoManipulation = 1;
+		//attachments[] = {"card_UK","card_USA","card_FRANCE","card_SPAIN","card_SWEDEN","card_GERMAN"};
+	};
+
+		class Cigarette_albumflags : MyBook_Base
+	{
+		scope = 2;
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\bookflags.paa"};
+		title = "Cigarette Card Collection";
 		displayName = "Album For Your Collection Of Flags";
 		descriptionShort = "If you smoke alot you'll get the set";
 		allowOwnedCargoManipulation = 1;
 		attachments[] = {"card_UK","card_USA","card_FRANCE","card_SPAIN","card_SWEDEN","card_GERMAN"};
 	};
 
-		class Cigarette_album2 : MyBook_Base
+		class Cigarette_albumClassicCars : MyBook_Base
 	{
 		scope = 2;
-		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\book4.paa"};
+		hiddenSelectionsTextures[] = {"\FodsCardsCollections\data\bookcars.paa"};
 		title = "Cigarette Card Collection";
-		displayName = "Album For Your Collection Of Someting else";
+		displayName = "Album For Your Collection Of Classic Cars";
 		descriptionShort = "If you smoke alot you'll get the set";
 		allowOwnedCargoManipulation = 1;
-		attachments[] = {"card_UK","card_USA","card_FRANCE","card_SPAIN","card_SWEDEN","card_GERMAN"};
+		attachments[] = {"card_ETYPE","card_MINI"};
 	};
 
 };
